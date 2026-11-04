@@ -5,7 +5,7 @@ const { validateLead } = require("../src/validation");
 // Agrupamento de testes da função validateLead()
 describe("Aplicação de testes unitários na função validateLead()", () => {
 
-  // 1. Cadastro completo válido
+  // Cadastro completo válido
 
   // Teste para verificar se um cadastro completo é considerado válido
   test("Cadastro completo válido", () => {
@@ -21,7 +21,7 @@ describe("Aplicação de testes unitários na função validateLead()", () => {
     expect(result.valid).toBe(true);
   });
 
-  // 2. Cadastro mínimo válido
+  // Cadastro mínimo válido
 
   // Teste para verificar se um cadastro mínimo (com apenas nome e e-mail) é considerado válido
   test("Cadastro mínimo válido", () => {
@@ -35,7 +35,7 @@ describe("Aplicação de testes unitários na função validateLead()", () => {
     expect(result.valid).toBe(true);
   });
 
-  // 3. Nome muito curto
+  // Nome muito curto
 
   // Teste para verificar se um nome muito curto é considerado inválido
   test("Nome muito curto", () => {
@@ -50,7 +50,7 @@ describe("Aplicação de testes unitários na função validateLead()", () => {
     expect(result.valid).toBe(false);
   });
 
-  // 4. Nome com espaços vazios
+  // Nome com espaços vazios
 
   // Teste para verificar se um nome composto apenas por espaços vazios é considerado inválido
   test("Nome com espaços vazios", () => {
@@ -64,7 +64,7 @@ describe("Aplicação de testes unitários na função validateLead()", () => {
     expect(result.valid).toBe(false);
   });
 
-  // 5. Nome com tipo incorreto
+  // Nome com tipo incorreto
 
   // Teste para verificar se um nome com tipo incorreto (número) é considerado inválido
   test("Nome com tipo incorreto", () => {
@@ -78,7 +78,7 @@ describe("Aplicação de testes unitários na função validateLead()", () => {
     expect(result.valid).toBe(false);
   });
 
-  // 6. E-mail sem @
+  // E-mail sem @
 
   // Teste para verificar se um e-mail sem o caractere "@" é considerado inválido
   test("Verificar se o E-mail está sem @", () => {
@@ -92,7 +92,7 @@ describe("Aplicação de testes unitários na função validateLead()", () => {
     expect(result.valid).toBe(false);
   });
 
-  // 7. E-mail incompleto sem domínio e sem ponto
+  // E-mail incompleto sem domínio e sem ponto
 
   // Teste para verificar se um e-mail incompleto (sem domínio e sem ponto) é considerado inválido
   test("Verificar se o E-mail está incompleto", () => {
@@ -105,7 +105,7 @@ describe("Aplicação de testes unitários na função validateLead()", () => {
     expect(result.valid).toBe(false);
   });
 
-  // 8. E-mail com tipo incorreto
+  // E-mail com tipo incorreto
 
   // Teste para verificar se um e-mail com tipo incorreto (número) é considerado inválido
   test("Verifica se o E-mail está com tipo incorreto", () => {
@@ -118,7 +118,7 @@ describe("Aplicação de testes unitários na função validateLead()", () => {
     expect(result.valid).toBe(false);
   });
 
-  // 9. Telefone com tipo incorreto
+  // Telefone com tipo incorreto
 
   // Teste para verificar se um telefone com tipo incorreto (número) é considerado inválido
   test("Verifica se o Telefone está com tipo incorreto", () => {
@@ -132,7 +132,7 @@ describe("Aplicação de testes unitários na função validateLead()", () => {
     expect(result.valid).toBe(false);
   });
 
-  // 10. Modalidade/interesse inválido
+  // Modalidade/interesse inválido
 
   // Teste para verificar se uma modalidade/interesse inválido é considerado inválido
   test("Verifica se a Modalidade/interesse é inválida", () => {
@@ -146,7 +146,7 @@ describe("Aplicação de testes unitários na função validateLead()", () => {
     expect(result.valid).toBe(false);
   });
 
-  // 11. Modalidade com diferenciação de caixa
+  // Modalidade com diferenciação de caixa
 
   // Teste para verificar se uma modalidade/interesse com diferenciação de caixa é considerado inválido
   test("Verifica se a Modalidade está com diferenciação de caixa", () => {
