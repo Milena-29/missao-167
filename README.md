@@ -30,11 +30,10 @@ Dessa forma, os testes buscaram identificar possíveis erros e garantir maior se
 
 | Ferramenta/Tecnologia | Versão |
 |---|---|
-| JavaScript | ECMAScript (versão não informada) |
-| Node.js | Não informada |
-| Jest | Não informada |
-| NPM | Não informada |
-| Sistema operacional | Microsoft Windows 10.0.26200.9711 |
+| JavaScript | 12.4.254.14-node.12 |
+| Node.js | v22.2.0 |
+| Jest | 30.5.2 |
+| NPM | 10.7.0 |
 
 **Comando utilizado para preparar o ambiente:**
 
