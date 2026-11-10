@@ -4,47 +4,37 @@
 
 | Informação | Descrição |
 |---|---|
-| **Nome do projeto:** | Academia Viva |
-| **Resumo do projeto:** | Aplicação que realiza a validação de dados de cadastro de usuários, verificando nome, e-mail, telefone e modalidade de interesse. |
-| **Nome do testador:** | Milena Lopes do Nascimento |
-| **Data dos testes:** | 05/11/2026 |
-| **Tecnologias utilizadas:** | JavaScript, Node.js, NPM, Jest, HTML e CSS |
+| **Nome do projeto** | Academia Viva |
+| **Resumo do projeto** | Aplicação que realiza a validação de dados de cadastro de usuários, verificando nome, e-mail, telefone e modalidade de interesse. |
+| **Nome do testador** | Milena Lopes do Nascimento |
+| **Data dos testes** | 05/11/2026 |
+| **Tecnologias utilizadas** | JavaScript, Node.js, NPM, Jest, HTML e CSS |
 
 ---
 
 ## 2. Objetivo dos testes
 
-Descreva qual foi o objetivo da realização dos testes na aplicação.
+O objetivo dos testes foi verificar o funcionamento da função `validateLead()`, responsável por validar os dados informados no formulário de cadastro de leads.
 
-- Qual funcionalidade foi testada?
-- O que os testes pretendiam verificar?
-- Quais possíveis erros ou falhas deveriam ser identificados?
-
-**Resposta:**
-
-O objetivo dos testes foi verificar o funcionamento da função `validateLead`, responsável por validar os dados informados no formulário de cadastro de leads.
-
-Os testes pretendiam verificar se a aplicação aceita corretamente cadastros válidos e identifica informações incorretas ou incompletas.
+Os testes tiveram como finalidade verificar se a aplicação aceita corretamente cadastros válidos e identifica informações incorretas ou incompletas.
 
 Foram testados diferentes cenários, incluindo nomes muito curtos, nomes contendo apenas espaços, e-mails inválidos, tipos de dados incorretos, telefones numéricos e modalidades de interesse não permitidas.
 
 Também foi verificado se o JavaScript diferencia letras maiúsculas e minúsculas na validação das modalidades.
 
-Dessa forma, os testes tiveram como finalidade identificar possíveis erros e garantir maior segurança e qualidade no funcionamento da aplicação.
+Dessa forma, os testes buscaram identificar possíveis erros e garantir maior segurança e qualidade no funcionamento da aplicação.
 
 ---
 
 ## 3. Ambiente de testes
 
-Informe as ferramentas e tecnologias utilizadas para executar os testes.
-
 | Ferramenta/Tecnologia | Versão |
 |---|---|
-| JavaScript |  |
-| Node.js | |
-| Jest |  |
-| NPM |  |
-| Outras |  |
+| JavaScript | ECMAScript (versão não informada) |
+| Node.js | Não informada |
+| Jest | Não informada |
+| NPM | Não informada |
+| Sistema operacional | Microsoft Windows 10.0.26200.9711 |
 
 **Comando utilizado para preparar o ambiente:**
 
@@ -68,18 +58,15 @@ npm test -- --coverage
 
 ## 4. Funcionalidades testadas
 
-Liste as funções, métodos ou componentes da aplicação que foram submetidos aos testes.
-
 | Nº | Funcionalidade/Função | Arquivo | Objetivo do teste |
-|--- |-----------------------|---------|-------------------|
+|---|---|---|---|
 | 1 | `validateLead()` | `src/validation.js` | Verificar se os dados de cadastro são válidos, incluindo nome, e-mail, telefone e modalidade de interesse. |
-
 
 ---
 
 ## 5. Registro detalhado dos testes realizados
 
-Registre individualmente TODOS os testes implementados.
+Foram implementados e executados 11 testes unitários utilizando o Jest. Todos apresentaram os resultados esperados.
 
 ### Teste 01 – Cadastro completo válido
 
@@ -89,8 +76,8 @@ Registre individualmente TODOS os testes implementados.
 - **Tipo de cenário:** Positivo.
 - **Entrada utilizada:** Nome: Ana Silva; e-mail: ana.silva@email.com; telefone: (27) 99999-9999; interesse: Online.
 - **Resultado esperado:** `result.valid` deve retornar `true`.
-- **Resultado obtido:** 
-- **Status:** 
+- **Resultado obtido:** `true`.
+- **Status:** APROVADO.
 
 **Código do teste:**
 
@@ -108,8 +95,6 @@ test("Cadastro completo válido", () => {
 });
 ```
 
----
-
 ### Teste 02 – Cadastro mínimo válido
 
 - **Funcionalidade testada:** `validateLead()`
@@ -118,8 +103,8 @@ test("Cadastro completo válido", () => {
 - **Tipo de cenário:** Positivo.
 - **Entrada utilizada:** Nome: João; e-mail: joao@email.com.
 - **Resultado esperado:** `result.valid` deve retornar `true`, pois telefone e interesse são opcionais.
-- **Resultado obtido:** 
-- **Status:**
+- **Resultado obtido:** `true`.
+- **Status:** APROVADO.
 
 **Código do teste:**
 
@@ -135,8 +120,6 @@ test("Cadastro mínimo válido", () => {
 });
 ```
 
----
-
 ### Teste 03 – Nome muito curto
 
 - **Funcionalidade testada:** `validateLead()`
@@ -145,8 +128,8 @@ test("Cadastro mínimo válido", () => {
 - **Tipo de cenário:** Negativo/Limite.
 - **Entrada utilizada:** Nome: Jo; e-mail: joao@email.com.
 - **Resultado esperado:** `result.valid` deve retornar `false`.
-- **Resultado obtido:** 
-- **Status:** 
+- **Resultado obtido:** `false`.
+- **Status:** APROVADO.
 
 **Código do teste:**
 
@@ -162,8 +145,6 @@ test("Nome muito curto", () => {
 });
 ```
 
----
-
 ### Teste 04 – Nome com espaços vazios
 
 - **Funcionalidade testada:** `validateLead()`
@@ -172,8 +153,8 @@ test("Nome muito curto", () => {
 - **Tipo de cenário:** Negativo.
 - **Entrada utilizada:** Nome: "   "; e-mail: joao@email.com.
 - **Resultado esperado:** `result.valid` deve retornar `false`.
-- **Resultado obtido:** 
-- **Status:** 
+- **Resultado obtido:** `false`.
+- **Status:** APROVADO.
 
 **Código do teste:**
 
@@ -189,8 +170,6 @@ test("Nome com espaços vazios", () => {
 });
 ```
 
----
-
 ### Teste 05 – Nome com tipo incorreto
 
 - **Funcionalidade testada:** `validateLead()`
@@ -199,8 +178,8 @@ test("Nome com espaços vazios", () => {
 - **Tipo de cenário:** Negativo/Excepcional.
 - **Entrada utilizada:** Nome: 12345; e-mail: joao@email.com.
 - **Resultado esperado:** `result.valid` deve retornar `false`.
-- **Resultado obtido:** 
-- **Status:** 
+- **Resultado obtido:** `false`.
+- **Status:** APROVADO.
 
 **Código do teste:**
 
@@ -216,8 +195,6 @@ test("Nome com tipo incorreto", () => {
 });
 ```
 
----
-
 ### Teste 06 – E-mail sem @
 
 - **Funcionalidade testada:** `validateLead()`
@@ -226,8 +203,8 @@ test("Nome com tipo incorreto", () => {
 - **Tipo de cenário:** Negativo.
 - **Entrada utilizada:** Nome: Ana; e-mail: anaemail.com.
 - **Resultado esperado:** `result.valid` deve retornar `false`.
-- **Resultado obtido:** 
-- **Status:** 
+- **Resultado obtido:** `false`.
+- **Status:** APROVADO.
 
 **Código do teste:**
 
@@ -243,8 +220,6 @@ test("Verificar se o E-mail está sem @", () => {
 });
 ```
 
----
-
 ### Teste 07 – E-mail incompleto
 
 - **Funcionalidade testada:** `validateLead()`
@@ -253,8 +228,8 @@ test("Verificar se o E-mail está sem @", () => {
 - **Tipo de cenário:** Negativo.
 - **Entrada utilizada:** Nome: Ana; e-mail: email@email.
 - **Resultado esperado:** `result.valid` deve retornar `false`.
-- **Resultado obtido:** 
-- **Status:** 
+- **Resultado obtido:** `false`.
+- **Status:** APROVADO.
 
 **Código do teste:**
 
@@ -270,8 +245,6 @@ test("Verificar se o E-mail está incompleto", () => {
 });
 ```
 
----
-
 ### Teste 08 – E-mail com tipo incorreto
 
 - **Funcionalidade testada:** `validateLead()`
@@ -280,8 +253,8 @@ test("Verificar se o E-mail está incompleto", () => {
 - **Tipo de cenário:** Negativo/Excepcional.
 - **Entrada utilizada:** Nome: Ana; e-mail: 12345.
 - **Resultado esperado:** `result.valid` deve retornar `false`.
-- **Resultado obtido:** 
-- **Status:** 
+- **Resultado obtido:** `false`.
+- **Status:** APROVADO.
 
 **Código do teste:**
 
@@ -297,8 +270,6 @@ test("Verifica se o E-mail está com tipo incorreto", () => {
 });
 ```
 
----
-
 ### Teste 09 – Telefone com tipo incorreto
 
 - **Funcionalidade testada:** `validateLead()`
@@ -307,8 +278,9 @@ test("Verifica se o E-mail está com tipo incorreto", () => {
 - **Tipo de cenário:** Negativo/Excepcional.
 - **Entrada utilizada:** Nome: Ana; e-mail: ana@email.com; telefone: 12345.
 - **Resultado esperado:** `result.valid` deve retornar `false`.
-- **Resultado obtido:** 
-- **Status:** 
+- **Resultado obtido:** `false`.
+- **Status:** APROVADO.
+
 **Código do teste:**
 
 ```javascript
@@ -324,8 +296,6 @@ test("Verifica se o Telefone está com tipo incorreto", () => {
 });
 ```
 
----
-
 ### Teste 10 – Modalidade/interesse inválido
 
 - **Funcionalidade testada:** `validateLead()`
@@ -334,8 +304,8 @@ test("Verifica se o Telefone está com tipo incorreto", () => {
 - **Tipo de cenário:** Negativo.
 - **Entrada utilizada:** Nome: Ana; e-mail: ana@email.com; interesse: Internacional.
 - **Resultado esperado:** `result.valid` deve retornar `false`.
-- **Resultado obtido:** 
-- **Status:** 
+- **Resultado obtido:** `false`.
+- **Status:** APROVADO.
 
 **Código do teste:**
 
@@ -352,8 +322,6 @@ test("Verifica se a Modalidade/interesse é inválida", () => {
 });
 ```
 
----
-
 ### Teste 11 – Modalidade com diferenciação de caixa
 
 - **Funcionalidade testada:** `validateLead()`
@@ -362,8 +330,8 @@ test("Verifica se a Modalidade/interesse é inválida", () => {
 - **Tipo de cenário:** Negativo.
 - **Entrada utilizada:** Nome: Ana; e-mail: ana@email.com; interesse: online.
 - **Resultado esperado:** `result.valid` deve retornar `false`, pois a opção permitida é escrita como "Online".
-- **Resultado obtido:** 
-- **Status:** 
+- **Resultado obtido:** `false`.
+- **Status:** APROVADO.
 
 **Código do teste:**
 
@@ -380,113 +348,122 @@ test("Verifica se a Modalidade está com diferenciação de caixa", () => {
 });
 ```
 
----
-
-**Importante:** Todos os 11 testes devem ser registrados, independentemente de serem aprovados ou reprovados durante a execução.
+**Importante:** Todos os 11 testes foram registrados e executados, independentemente de serem cenários positivos ou negativos. Todos foram aprovados.
 
 ---
 
 ## 6. Resumo dos resultados
 
-Apresente um resumo quantitativo de todos os testes executados.
+Após a execução do comando `npm test -- --coverage`, foram obtidos os seguintes resultados:
 
 | Indicador | Quantidade |
 |---|---:|
 | Total de testes executados | 11 |
-| Testes aprovados (Passed)  |  |
-| Testes reprovados (Failed) |  |
+| Testes aprovados (Passed) | 11 |
+| Testes reprovados (Failed) | 0 |
 
 **Percentual de aprovação:**
 
+**Resultado: 100%**
 
-Resultado: %
+Todos os testes foram executados com sucesso, sem apresentar falhas.
+
+### 6.1. Cobertura de código
+
+A ferramenta Jest também apresentou os seguintes indicadores de cobertura:
+
+| Indicador | Cobertura |
+|---|---:|
+| Statements (instruções) | 76,47% |
+| Branches (ramificações) | 72,72% |
+| Functions (funções) | 50% |
+| Lines (linhas) | 81,25% |
+
+**Linhas não cobertas:** 37–39.
+
+Os resultados demonstram que a maior cobertura foi alcançada nas linhas de código, com 81,25%. Ainda existem trechos que não foram executados durante os testes, indicando oportunidades para ampliar a cobertura.
 
 ---
 
 ## 7. Evidências da execução dos testes
 
+[Print do resultado dos testes](test_print.png)
 
-**Espaço para inserir a imagem:**
+A execução dos testes foi realizada pelo terminal do Windows, utilizando o Jest com a opção de cobertura de código.
 
-[Inserir aqui a captura de tela da execução dos testes no Jest.]
+**Resultado apresentado no terminal:**
 
-Inclua evidências que mostrem:
+- Test Suites: 1 passed, 1 total.
+- Tests: 11 passed, 11 total.
+- Snapshots: 0 total.
+- Time: 5.111 s.
 
-- Execução dos testes no Jest.
-- Quantidade de testes aprovados e reprovados.
-- Mensagens de erro, quando houver.
-- Correções realizadas após a identificação de falhas, se aplicável.
+**Resultado geral: 100% dos testes aprovados.**
+
+A captura de tela da execução demonstra que todos os testes foram concluídos com sucesso e apresenta os indicadores de cobertura do código.
 
 ---
 
 ## 8. Problemas identificados e correções realizadas
 
-Registre os problemas encontrados durante a execução dos testes e as soluções implementadas.
+Durante a preparação dos testes, foram identificadas algumas diferenças entre os dados utilizados nos testes e as regras esperadas pela função `validateLead()`.
 
 | Problema identificado | Causa do problema | Solução implementada | Situação |
 |---|---|---|---|
-| Nomes de campos diferentes dos esperados pela função | Os testes precisam utilizar os campos `name`, `email`, `phone` e `interest`. | Adequação dos objetos de teste aos nomes utilizados na função. | Corrigido nos testes |
+| Nomes de campos diferentes dos esperados pela função | Os testes precisavam utilizar os campos `name`, `email`, `phone` e `interest`. | Adequação dos objetos de teste aos nomes utilizados na função. | Corrigido nos testes |
 | Verificação incorreta do retorno da função | A função retorna um objeto com a propriedade `valid`, e não apenas um valor booleano. | Utilização de `result.valid` nas verificações do Jest. | Corrigido nos testes |
 | Utilização de modalidade válida em um teste de modalidade inválida | A opção "Presencial" também faz parte das modalidades permitidas. | Substituição por "Internacional", que não é uma modalidade permitida. | Corrigido nos testes |
 
-Caso nenhum problema tenha sido identificado durante a execução, explique.
-
 **Resposta:**
 
-Durante a preparação dos testes, foram identificadas algumas diferenças entre os dados utilizados nos testes e as regras esperadas pela função `validateLead`.
+As correções foram realizadas nos testes para que eles verificassem corretamente o funcionamento do código original, sem alterar indevidamente as regras de validação da aplicação.
 
-Foram realizados ajustes nos nomes dos campos, na verificação do retorno da função e na modalidade utilizada como exemplo de valor inválido.
-
-Essas correções foram feitas nos testes para que eles verificassem corretamente o funcionamento do código original, sem alterar indevidamente as regras de validação da aplicação.
+Após os ajustes, os 11 testes foram executados e todos apresentaram os resultados esperados.
 
 ---
 
 ## 9. Análise dos resultados
 
-Responda às questões:
+**1. Todos os testes apresentaram os resultados esperados? Justifique.**
 
-1. Todos os testes apresentaram os resultados esperados? Justifique.
-2. Quais foram os cenários mais importantes verificados durante os testes?
-3. Algum teste identificou uma falha na aplicação? Qual?
-4. Quais alterações foram necessárias para corrigir os problemas encontrados?
-5. Existem funcionalidades que ainda precisam ser testadas? Quais?
+Sim. Todos os 11 testes foram aprovados durante a execução do Jest, representando 100% de aprovação. Isso demonstra que a função `validateLead()` apresentou os comportamentos esperados nos cenários positivos e negativos testados.
 
-**Respostas:**
+**2. Quais foram os cenários mais importantes verificados durante os testes?**
 
-1. A confirmação depende da execução do Jest. Os testes foram elaborados para verificar os comportamentos previstos na função `validateLead`. Após a execução, será possível confirmar se todos apresentaram os resultados esperados.
+Os cenários mais importantes foram a aceitação de cadastros válidos, a rejeição de nomes muito curtos ou preenchidos apenas com espaços, a validação do formato do e-mail, a verificação dos tipos de dados e a identificação de modalidades não permitidas.
 
-2. Os cenários mais importantes foram a aceitação de cadastros válidos, a rejeição de nomes muito curtos ou preenchidos apenas com espaços, a validação do formato do e-mail, a verificação dos tipos de dados e a identificação de modalidades não permitidas.
+**3. Algum teste identificou uma falha na aplicação? Qual?**
 
-3. Até a execução dos testes, não é possível afirmar se algum deles identificou uma falha na aplicação. Os testes foram preparados para detectar possíveis erros nas regras de validação.
+Durante a execução final, nenhum dos 11 testes apresentou falha. Todos foram aprovados. Entretanto, durante a preparação dos testes, foram identificadas inconsistências nos dados utilizados e na forma de verificar o retorno da função, que foram corrigidas nos próprios testes.
 
-4. Foram realizados ajustes nos dados utilizados nos testes, nos nomes dos campos e na forma de verificar o retorno da função. Também foi utilizada uma modalidade realmente inválida no teste correspondente.
+**4. Quais alterações foram necessárias para corrigir os problemas encontrados?**
 
-5. Sim. Ainda podem ser testadas outras funcionalidades da aplicação, como a função `normalizeCourseFilter`, o funcionamento do formulário de cadastro, a integração entre HTML e JavaScript e a apresentação das mensagens de erro para o usuário.
+Foram realizados ajustes nos nomes dos campos utilizados nos objetos de teste, na verificação da propriedade `result.valid` e na modalidade utilizada como exemplo de valor inválido. Essas alterações permitiram que os testes verificassem corretamente as regras da função.
+
+**5. Existem funcionalidades que ainda precisam ser testadas? Quais?**
+
+Sim. Ainda podem ser testadas outras funcionalidades da aplicação, como a função `normalizeCourseFilter`, o funcionamento do formulário de cadastro, a integração entre HTML e JavaScript e a apresentação das mensagens de erro para o usuário.
+
+Além disso, podem ser criados novos testes para aumentar a cobertura de código, principalmente nas linhas 37 a 39, que não foram cobertas durante a execução.
 
 ---
 
 ## 10. Conclusão
 
-Apresente uma conclusão sobre o processo de testes realizado.
+Os testes unitários realizados na aplicação Academia Viva apresentaram resultados positivos. Foram elaborados e executados 11 testes para a função `validateLead()`, contemplando situações válidas e inválidas relacionadas ao nome, e-mail, telefone e modalidade de interesse.
 
-- Os testes contribuíram para identificar possíveis falhas?
-- A aplicação apresentou o comportamento esperado nos cenários testados?
-- Qual foi a importância dos testes unitários para a qualidade do software desenvolvido?
+Todos os 11 testes foram aprovados, alcançando um percentual de aprovação de 100%, sem nenhuma reprovação.
 
-**Conclusão da equipe:**
+A cobertura de código apresentou 76,47% de instruções, 72,72% de ramificações, 50% de funções e 81,25% de linhas.
 
-Os testes unitários são importantes para verificar se as funções da aplicação apresentam o comportamento esperado diante de diferentes tipos de entrada.
+Apesar dos resultados positivos, ainda existem trechos do código que não foram cobertos pelos testes, demonstrando a possibilidade de melhorias e da criação de novos cenários de validação.
 
-Neste trabalho, foram elaborados 11 testes para a função `validateLead`, contemplando situações válidas e inválidas relacionadas ao nome, e-mail, telefone e modalidade de interesse.
+A realização dos testes contribuiu para verificar as regras de validação, identificar inconsistências durante a preparação dos testes e aumentar a confiabilidade do sistema.
 
-A realização desses testes contribui para identificar possíveis falhas, verificar as regras de validação e aumentar a confiabilidade do sistema Academia Viva.
-
-Após a execução do Jest, os resultados permitirão confirmar se a função respondeu corretamente a todos os cenários testados.
-
-Dessa forma, foi possível compreender a importância dos testes unitários para melhorar a qualidade do software e reduzir erros durante o desenvolvimento.
+Dessa forma, foi possível compreender a importância dos testes unitários para melhorar a qualidade do software, reduzir erros e garantir que as funcionalidades desenvolvidas apresentem o comportamento esperado.
 
 ---
 
 **Relatório elaborado por:** Milena Lopes do Nascimento
 
-**Data da última atualização:** 05/11/2026
+**Data da última atualização:** 10/11/2026
